@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+body {
+  width: 100%;
+
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  background-color: #001220;
+  color: #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .title-refill {
+  font-size: 25px;
+  margin: 10px 10px 10px 50px;
+  letter-spacing: 2px;
+}
+
+nav .buttons {
+  width: 35%;
+}
+
+nav .buttons .nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav .buttons .nav-links li {
+  list-style: none;
+}
+nav .title-refill .logo {
+  height: 20px;
+}
+nav .buttons .nav-links a {
+  text-decoration: none;
+  color: #e7e7e7;
+  padding: 5px 0px;
+  transition: 0.2s;
+  border: 2px solid #ffffff00;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+nav .buttons .nav-links a:hover {
+  border: 2px solid #009473;
+}
+
+/* //////// HERO ///////////////  */
+
+.hero-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #001220;
+  background-image: url(/public/res/stars.png);
+  color: #e7e7e7;
+}
+
+.hero-section .scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-section .scroll-down .text {
+  margin: 20px;
+  font-size: 3rem;
+}
+.hero-section .scroll-down .text-small {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+.hero-section .hero-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  bottom: -190px;
+}
+
+.hero-section .hero-bottom,
+.hero-section .hero-bottom-img {
+  width: 100%;
+}
+
+/*---------scroll-bar---------*/
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #009473 #ffffff;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(0deg, #001220, #009473);
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+/*---------blog display section---------*/
+
+.blog-display {
+  transform: translateY(150px);
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blog-display .blog-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 85%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 7px;
+  border: 2px solid #001220;
+  min-height: 340px;
+}
+.blog-display .blog-container .title {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background-color: #001220;
+  min-height: 40px;
+  color: #e7e7e7;
+}
+.blog-display .blog-container .title h1 {
+  font-size: 1.5rem;
+  padding: 0px 30px;
+}
+.blog-display .blog-container .blog-content {
+  padding: 15px 30px;
+}
+.blog-display .blog-container .vote {
+  height: 50px;
+  width: 15%;
+  position: absolute;
+  background-color: #001220;
+  bottom: -51px;
+  right: 0;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.blog-display .blog-container .vote img {
+  height: 30px;
+  margin: 10px 0px;
+}
+.blog-display .blog-container .vote .down-vote-img {
+  transform: rotateZ(180deg);
+}
+
+/* /////////////blog writing ////////  */
+
+.blog-writing {
+  transform: translateY(150px);
+  height: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #001220;
+  color: #ffffff;
+  
+
+  margin-top: 200px;
+}
+.blog-writing .opinion-top
+{
+  width: 100%;
+  position: absolute;
+  top: -165px;
+  z-index: -100;
+}
+.blog-writing .opinion-bottom
+{
+  width: 100%;
+  position: absolute;
+  bottom: -165px;
+  z-index: -100;
+}
+.blog-writing .blog-writing-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.blog-writing .blog-writing-container .opinion {
+  margin: 50px;
+  font-size: 2.5rem;
+}
+.blog-writing .blog-writing-container form {
+  display: flex;
+  justify-content: center;
+  /* background-color: black; */
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+.blog-writing .blog-writing-container form .flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90%;
+}
+.blog-writing .blog-writing-container form .blog-title .title {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #009473;
+  background-color: #001220;
+  color: #ffffff;
+}
+
+.blog-writing .blog-writing-container form label {
+  font-size: 16px;
+  margin: 10px 10px 10px 0;
+}
+
+.blog-writing .blog-writing-container form .blog-textarea .blog-content {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #009473;
+  background-color: #001220;
+  color: #ffffff;
+}
+
+.blog-writing .blog-writing-container form .blog-user-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(55px);
+}
+
+.blog-writing .blog-writing-container form .blog-user-details .name .blog-name {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #009473;
+  background-color: #001220;
+  color: #ffffff;
+}
+
+.blog-writing .blog-writing-container form .blog-user-details .email .blog-email {
+  width: 81%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #009473;
+  background-color: #001220;
+  color: #ffffff;
+}
+
+.blog-writing .blog-writing-container form .publish{
+  height: 40px;
+  width: 91%;
+  border-radius: 5px;
+  border: 2px solid #009473;
+  margin-top: 25px;
+  background-color: #009473;
+}
+
+/*----------------------------save-energy and back to top-------------------------------*/
+
+.save-energy-and-back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 60px;
+  transform: translateY(300px);
+  height: 40vh;
+}
+.save-energy-and-back-to-top .navigation-image-top {
+  height: 50px;
+  margin: 25px;
+  transform: rotateZ(270deg);
+}
+.save-energy-and-back-to-top .save-heading {
+  font-size: 2rem;
+}
+
+/* /////////footer ////////////// */
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  left: 0;
+  height: 50vh;
+  transform: translateY(250px);
+}
+.footer img {
+  width: 100%;
+
+  transform: translateY(60px);
+}
+.footer .rectangle {
+  height: 300px;
+  width: 100%;
+  background-color: #001220;
+}
+.footer .contents {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffffff;
+  width: 100%;
+  height: 150px;
+}
+
+.contents .footer-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+}
+.contents .footer-container .title {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.contents .footer-container .subtitle {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+.contents .footer-container span {
+  width: 50%;
+  height: 2px;
+  background-color: #ffe3fe;
+  margin: 5px 0;
+  border-radius: 25px;
+}
+.contents .footer-container .links .txt {
+  padding: 10px 2px 4px 2px;
+}
+.contents .footer-container ul li {
+  padding: 3px 0px;
+  list-style: none;
+  color: #ffe3fe;
+}
+.contents .footer-container ul li a {
+  text-decoration: none;
+  color: #ffe3fe;
+}
+.top {
+  transform: translateY(-25px);
+}
+.img-bot {
+  position: absolute;
+  bottom: 80px;
+  right: 7%;
+  z-index: -1;
+}
+.img-bot img {
+  height: 250px;
+}
+.bottom {
+  transform: translateY(55px) translateX(25px);
+}
