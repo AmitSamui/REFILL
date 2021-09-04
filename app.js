@@ -72,56 +72,7 @@ app.post("/blog" , (req , res) => {
 
 
 
-app.listen(3000, function () {
-  console.log("Server started on port 3000");
-});
+app.listen(process.env.PORT || 3000 , () => {
+  console.log("the server is running at port 3000");
+})
 
-
-// app.get("/about", (req, res) => {
-//   res.render("about", { aboutContent: aboutContent });
-// });
-
-// app.get("/contact", (req, res) => {
-//   res.render("contact", { contactContent: contactContent });
-// });
-
-// app.get("/compose", (req, res) => {
-//   res.render("compose");
-// });
-
-// app.get("/post/:postId", (req, res) => {
- 
- 
-// console.log(req.params.postId);
-
-//   Post.findOne({_id : req.params.postId} , (err , posts)=>{
-//     if(err) {
-//       console.log(err);
-//     }else{
-//       res.render("post", { post: posts });
-//     }
-//   })
-
-//   // for (let i = 0; i < posts.length; i++) {
-//   //   const post = posts[i];
-//   //   if (post.composeText.toLowerCase() === tpc) {
-//   //     boo = true;
-      
-//   //   }
-//   // }
-
-//   // if (boo === false) {
-//   //   console.log("match not found");
-//   // }
-
-// });
-// app.post("/compose", (req, res) => {
-//   const post = new Post({
-//     title: req.body.composeText,
-//     content: req.body.postText,
-//   });
-
-//   post.save();
-
-//   res.redirect("/");
-// });
