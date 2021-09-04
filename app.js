@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 require('dotenv').config();
+const nodemailer = require("nodemailer");
 
 // http://localhost:3000/blog
 
@@ -34,6 +35,7 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.render("main");
 });
+
 
 
 // ---------------------------------blog section --------------------- 
