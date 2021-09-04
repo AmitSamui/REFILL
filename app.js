@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 
 // ---------------------------------blog section --------------------- 
 
-const blogs = [];
+
 
 app.get("/blog" , (req , res) => {
 

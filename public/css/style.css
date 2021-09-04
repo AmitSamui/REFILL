@@ -630,7 +630,7 @@ nav .buttons .nav-links a:hover {
     background-color: #001220;
     padding-bottom: 20px;
     width: 100%;
-    background-image: url(/public/res/stars.png);
+    background-image: url(./res/stars.png);
   }
   .opinion-div .opinion-container {
     display: flex;
