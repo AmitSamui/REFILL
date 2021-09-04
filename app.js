@@ -4,6 +4,8 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 
+// http://localhost:3000/blog
+
 //--------db connection ------------
 // mongoose.connect("mongodb+srv://amit-samui:f9gYC6vfaWcgzXKA@cluster0.4prjc.mongodb.net/blogDB" , {useNewUrlParser: true});
 
@@ -26,8 +28,25 @@ app.use(express.static("public"));
 
 
 app.get("/", (req, res) => {
-    res.render("blog");
+    res.render("main");
 });
+
+
+// ---------------------------------blog section --------------------- 
+
+const blogs = [];
+
+app.get("/blog" , (req , res) => {
+  res.render("blog" , {blogs : blogs} );
+
+})
+
+app.post("/blog" , (req , res) => {
+  const body = req.body;
+  blogs.push(body);
+  console.log(body);
+  res.redirect("/blog")
+})
 
 
 

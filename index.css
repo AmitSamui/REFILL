@@ -717,6 +717,55 @@ nav .buttons .nav-links a:hover {
   transform: translateY(55px) translateX(25px);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-last .footer-content{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+.footer-last{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width:100%;
+  margin: 0 auto;
+  background-color: #001220;
+  flex-wrap: nowrap;
+  color: #ffffff;
+  height: 30vh;
+  position: relative;
+  transform: translateY(160px);
+  
+}
+
+.footer-last img{
+  width: 100%;
+  position: absolute;
+  z-index: -20;
+  top: -170px;
+}
+.footer-last .footer-content .footer-title{
+  text-align: right;
+}
+.footer-last .footer-content .footer-list{
+  list-style-type:none;
+  padding-left: 20px;
+  margin: 0px;
+}
+
 /* ---------------------- */
 
 @media (max-width: 1166px) {
