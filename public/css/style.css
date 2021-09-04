@@ -25,7 +25,7 @@ section {
   width: 100%;
 }
 nav {
-  position: relative;
+  position: fixed;
   z-index: 1000;
   top: 0;
   width: 100%;
@@ -235,7 +235,7 @@ nav .buttons .nav-links a:hover {
     align-items: center;
     justify-content: space-between;
     background-color: #001220;
-    background-image: url(./res/stars.png);
+    background-image: url(/res/stars.png);
     color: #e7e7e7;
   }
   
@@ -483,7 +483,7 @@ nav .buttons .nav-links a:hover {
     align-items: center;
     flex-direction: column;
     background-color: #001220;
-    background-image: url(./res/stars.png);
+    background-image: url(/res/stars.png);
   }
   
   .motto .motto-container .motto-top {
@@ -512,7 +512,7 @@ nav .buttons .nav-links a:hover {
     flex-direction: column;
     width: 90%;
     color: rgb(255, 255, 255);
-    background-image: url(./res/road.svg);
+    background-image: url(/res/road.svg);
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -630,7 +630,7 @@ nav .buttons .nav-links a:hover {
     background-color: #001220;
     padding-bottom: 20px;
     width: 100%;
-    background-image: url(./res/stars.png);
+    background-image: url(/res/stars.png);
   }
   .opinion-div .opinion-container {
     display: flex;
