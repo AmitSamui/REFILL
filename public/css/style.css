@@ -25,7 +25,7 @@ section {
   width: 100%;
 }
 nav {
-  position: fixed;
+  position: relative;
   z-index: 1000;
   top: 0;
   width: 100%;
@@ -34,12 +34,102 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 nav .title-refill {
   font-size: 25px;
   margin: 10px 10px 10px 50px;
   letter-spacing: 2px;
 }
+
+nav .hidden{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 4000;
+  top: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #001220;
+  transform: translateX(100%);
+  transition: 0.5s ease-in;
+  opacity: 0;
+}
+nav .active{
+  
+  transform: translateX(0);
+  opacity: 1;
+}
+nav .hidden .nav-links-hidden{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+nav .hidden li{
+  list-style: none;
+  margin: 25px;
+}
+nav .hidden li .links-hidden{
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* menu buttons */
+.menu-btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    z-index: 4001;
+}
+
+.menu-btn_lines, 
+.menu-btn_lines::before,
+.menu-btn_lines::after {
+    width: 1.5rem;
+    height: 0.1rem;
+    background-color: #e7e7e7;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-btn_lines::before,
+.menu-btn_lines::after {
+    content: " ";
+    position: absolute;
+}
+
+.menu-btn_lines::before {
+    transform: translateY(-0.5rem);
+}
+
+.menu-btn_lines::after {
+    transform: translateY(+0.5rem);
+}
+
+/* animation */
+
+.menu-btn.open .menu-btn_lines {
+    transform: translateX(2rem);
+    background-color: transparent;
+}
+
+.menu-btn.open .menu-btn_lines::before {
+    transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+
+.menu-btn.open .menu-btn_lines::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+}
+
+
 
 nav .buttons {
   width: 35%;
@@ -49,6 +139,7 @@ nav .buttons .nav-links {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 }
 nav .buttons .nav-links li {
   list-style: none;
@@ -68,6 +159,72 @@ nav .buttons .nav-links a {
 }
 nav .buttons .nav-links a:hover {
   border: 2px solid #009473;
+}
+
+
+
+
+/* menu icon */
+
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.menu-icon .navicon:before {
+  top: 5px;
+}
+
+.menu-icon .navicon:after {
+  top: -5px;
+}
+
+
+
+@media (max-width : 900px) {
+  .refill {
+      font-size: 24px;
+  }
+
+  .menu-btn {
+      display: flex;
+      transform: translateX(200px);
+  }
+
+  nav .buttons .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+  }
+  nav .hidden{
+    display: flex;
+  }
+
 }
 
 .hero-section {
@@ -893,5 +1050,113 @@ nav .buttons .nav-links a:hover {
       bottom: -100px;
     }
     
+  }
+
+  @media (max-width: 578px) {
+    .hero-section {
+      
+      justify-content: center;
+      flex-direction: column;
+      
+    }
+    .hero-section .hero-page{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .hero-section .hero-image{
+      transform: translateX(-25px) translateY(15px);
+      
+    }
+    .motto .motto-container .motto-content .motto-div-right  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 25px;
+    }
+    .motto .motto-container .motto-content .motto-two {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+
+    .know-more .know-more-title{
+      font-size: 20px;
+    }
+    .know-more .or{
+      font-size: 24px;
+    }
+
+    .donation-section .donation .donation-heading{
+      font-size: 24px;
+    }
+    .donation-section .donation .donation-body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .donation-section .donation .donation-body .icon{
+      height: 200px;
+      transform: translateX(-50px);
+      margin-top: 25px ;
+    }
+
+    .opinion .opinion-div .opinion-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .save-energy-and-back-to-top .save-heading{
+      font-size: 24px;
+    }
+
+    .footer-last{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 90vh;
+    }
+    .footer-last img{
+      transform: translateY(25px);
+    }
+    .footer-last .footer-content{
+      margin: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .footer-last .footer-title{
+      margin: 10px;
+    }
+    .footer-last .footer-links .footer-list{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .contact .contact-title{
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 415px) {
+    .menu-btn {
+      display: flex;
+      transform: translateX(130px);
+  }
+
+  .footer-last img{
+    transform: translateY(50px);
+  }
+
+ 
   }
   
