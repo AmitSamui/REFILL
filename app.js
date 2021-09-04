@@ -3,18 +3,22 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 // http://localhost:3000/blog
 
 //--------db connection ------------
-// mongoose.connect("mongodb+srv://amit-samui:f9gYC6vfaWcgzXKA@cluster0.4prjc.mongodb.net/blogDB" , {useNewUrlParser: true});
+const password  = process.env.mongopassword;
+mongoose.connect("mongodb+srv://amit-samui:" + password + "@cluster0.nuddc.mongodb.net/blogdb" , {useNewUrlParser: true});
 
-// const postSchema = {
-//   title: String,
-//   content: String
-// }
+const postSchema = {
+  blogTitle: String,
+  blogContent: String,
+  blogName: String,
+  blogEmail: String
+}
 
-// const Post = mongoose.model("Post" , postSchema);
+const Post = mongoose.model("Post" , postSchema);
 
 //--------- db connection end----------
 
@@ -37,14 +41,30 @@ app.get("/", (req, res) => {
 const blogs = [];
 
 app.get("/blog" , (req , res) => {
-  res.render("blog" , {blogs : blogs} );
+
+  Post.find({} , (err , posts) => {
+    if(err){console.log(err)}
+    else{
+      res.render("blog" , {blogs : posts} );
+    }
+    
+  })
+  
 
 })
 
 app.post("/blog" , (req , res) => {
   const body = req.body;
-  blogs.push(body);
-  console.log(body);
+
+  const post = new Post({
+    blogTitle: body.blogTitle,
+    blogContent: body.blogContent,
+    blogName: body.blogName,
+    blogEmail: body.blogEmail
+  })
+
+  post.save();
+
   res.redirect("/blog")
 })
 
